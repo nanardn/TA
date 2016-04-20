@@ -33,7 +33,7 @@
 					<h2>Laporan Penggunaan Dana Penggalangan</h2>
 				</hgroup>
 				
-				<button class="button blue"><a href="">Laporan Baru</a></button>
+				<button class="button blue"><a href="#">Laporan Baru</a></button>
 				
 			
 			
@@ -63,7 +63,8 @@
 							<td>{{$rc->total_pemasukan}}</td>
 							<td>{{$rc->saldo_usaha}}
 							</td>
-							<td><a href="{{ URL::to('/detailReportCrowd') }}"><button>Lihat</button></a></td>
+						
+							<td><a href="{{ URL::to('/dashboard/detail_laporan_crowdfunding/'.$rc->id_laporan_c)}}"><button>Lihat</button></a></td>
 							
 						</tr>
 						@endforeach

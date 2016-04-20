@@ -16,7 +16,7 @@ class crowdController extends Controller
     {
         return view('dashboard.dashboard-pendanaan');
     }
-    
+
     public function showReport()
     {
         return view('dashboard.dashboard-reportpendanaan');
@@ -25,9 +25,11 @@ class crowdController extends Controller
     	$result = DB::table('laporan_crowd')->get();
     	return view('dashboard.dashboard-reportpendanaan')->with('reportCrowd',$result);
     }
-    public function showDetailReport()
+    public function detailReport()
     {
-        return view('dashboard.dashboard-detailreportpendanaan');
+        $detailDana  = DB::table('laporan_penggunaan_crowd')->orderBy('id_laporan_ct', 'desc')->paginate(5);
+        
+        return view('dashboard.dashboard-detailreportpendanaan')->withIDLaporanUmum($detailDana);
     }
    public function getAllPendanaanAdmin(){
         $pendanaanadmin  = DB::table('pendanaan')->orderBy('id_pendanaan', 'desc')->paginate(5);
