@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Campaign;
+use App\CrowdReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
@@ -24,7 +26,7 @@ class crowdController extends Controller
     public function listReportCrowd(Request $request){
     	$result = DB::select('SELECT * FROM laporan_crowd, pendanaan 
             WHERE laporan_crowd.id_pendanaan=pendanaan.id_pendanaan');
-    	return view('dashboard.dashboard-reportpendanaan')->with('reportCrowd',$result);
+    	return view('dashboard.dashboard-reportpendanaan')->with('reportCrowd',$result)->with('campaigns', Campaign::pluck('nama_proyek', 'id_pendanaan'))->with('years', range(CrowdReport::first()->tahun, date('Y')));
     }
     public function detailReport()
     {
