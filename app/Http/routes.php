@@ -29,4 +29,4 @@ Route::get('/dashboard/showReportCrowdfunding','crowdController@showReport');
 Route::get('/dashboard/showReportPendanaan','crowdController@listReportCrowd');
 Route::get('/detailReportCrowd','crowdController@showDetailReport');
 Route::get('/dashboard/listPenggalangan','crowdController@getAllPendanaanAdmin');
-Route::get('/dashboard/detail_laporan_crowdfunding','crowdController@detailReport');
+Route::get('/dashboard/detail_laporan_crowdfunding/{id}','crowdController@detailReport');

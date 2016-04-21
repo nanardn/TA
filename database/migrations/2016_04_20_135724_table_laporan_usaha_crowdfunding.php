@@ -14,7 +14,7 @@ class TableLaporanUsahaCrowdfunding extends Migration
     {
         Schema::create('laporan_crowd', function (Blueprint $table) {
             $table->increments('id_laporan_c');
-            $table->string('nama_proyek');
+            //$table->string('nama_proyek');
             $table->string('bulan');
             $table->integer('tahun');
             $table->integer('total_pengeluaran');
