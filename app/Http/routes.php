@@ -30,3 +30,4 @@ Route::get('/dashboard/showReportPendanaan','crowdController@listReportCrowd');
 Route::get('/detailReportCrowd','crowdController@showDetailReport');
 Route::get('/dashboard/listPenggalangan','crowdController@getAllPendanaanAdmin');
 Route::get('/dashboard/detail_laporan_crowdfunding/{id}','crowdController@detailReport');
+Route::post('/uploaddetaillaporan','crowdController@uploadpendanaan');

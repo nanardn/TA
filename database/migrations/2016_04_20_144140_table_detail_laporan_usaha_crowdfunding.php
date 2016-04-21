@@ -20,6 +20,7 @@ class TableDetailLaporanUsahaCrowdfunding extends Migration
             $table->integer('total_pengeluaran');
             $table->integer('total_pemasukan');
             $table->integer('saldo_dana_usaha');
+            $table->string('akun');
             $table->date('date');
             $table->timestamps();
         });
