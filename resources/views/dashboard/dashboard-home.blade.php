@@ -9,8 +9,9 @@
 	@else
 
 		<nav>
+		<li>
 			<ul>
-				<li class="section"><a href="#"> Crowdfunding</a>
+				<li class="section"><a href="{{ url('/dashboard/home')}}"> Crowdfunding</a>
 				<ul class="submenu">
 				<li><a href="{{ url('/dashboard/daftarpenggalangan')}}">Daftar Penggalangan Dana</a></li>
 				<li><a href="{{ url('/dashboard/listPenggalangan')}}">List Pendanaan UMKM</a></li>

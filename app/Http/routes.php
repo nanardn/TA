@@ -36,8 +36,7 @@ Route::post('uploadpendanaan','daftarPendanaanController@uploadpendanaan');
 Route::post('/uploaddetaillaporan','crowdController@uploaddetaillaporan');
 Route::post('/createlaporancrowd','crowdController@createlaporancrowd');
 
-//route untuk bank
+//input kesemua
+Route::get('/kelola/usaha','inputAllController@showpage');
+//route untuk bank 
 
-//route untuk laporan usaha
-//Route::get('/bank/ajukanfundbank','bankController@showAdd');
-//Route::get('/dashboard/daftarpenggalangan','bankController@showpage');
