@@ -6,7 +6,7 @@
 		<meta http-equiv="refresh" content="0;URL='{{ url('/login') }}'" />
 
 	@else
-	<nav><li>
+	<nav>
 			<ul>
 				<li class="section"><a href="{{ url('/dashboard/showReportPendanaan')}}"> Crowdfunding</a>
 				<ul class="submenu">
@@ -83,16 +83,14 @@
 					    <option value="12">Desember</option>
 					</select>
 					<br><br>
-					Tanggal Transaksi : <br>
-					<input type="date" name="tgl_transaksi" id="tgl_transaksi">
-					<br/><br/>
+					Tahun : 
 					<select name="year">
 			 			@foreach ($years as $year)
 			 				<option value="{{ $year }}">{{ $year }}</option>
 			 			@endforeach
 			 		</select>
 					<br/> <br>
-					
+					<button type="submit" class="green">Post</button>
 				</form>
 
 			</div>		
