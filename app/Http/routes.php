@@ -27,10 +27,19 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard/pendanaan/{id}','crowdController@index');
 Route::get('/dashboard/daftarpenggalangan','daftarPendanaanController@showpage');
-Route::post('uploadpendanaan','daftarPendanaanController@uploadpendanaan');
+
 Route::get('/dashboard/showReportCrowdfunding','crowdController@showReport');
 Route::get('/dashboard/showReportPendanaan','crowdController@listReportCrowd');
 Route::get('/detailReportCrowd','crowdController@showDetailReport');
 Route::get('/dashboard/listPenggalangan','crowdController@getAllPendanaanAdmin');
 Route::get('/dashboard/detail_laporan_crowdfunding/{id}','crowdController@detailReport');
-Route::post('/uploaddetaillaporan','crowdController@uploadpendanaan');
+Route::get('/api/crowd-report', 'ApiController@crowdReport');
+
+Route::post('uploadpendanaan','daftarPendanaanController@uploadpendanaan');
+Route::post('/uploaddetaillaporan','crowdController@uploaddetaillaporan');
+Route::post('/createlaporancrowd','crowdController@createlaporancrowd');
+
+//input kesemua
+Route::get('/kelola/usaha','inputAllController@showpage');
+//route untuk bank 
+

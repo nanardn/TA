@@ -13,14 +13,14 @@
 			<header>
 				<span class="icon">&#128196;</span>
 				<hgroup>
-					<h1>Submit Laporan Pemanfaatan Dana Penggalangan</h1>
+					<h1>Submit Laporan Usaha</h1>
 					<h2>Data di Input per hari</h2>
 				</hgroup>
 			</header>
 			<div class="content">
 			<table id="myTable" border="0" >
 			<div class="content" width="100">
-				<form action="{{ URL::to('uploaddetaillaporan') }}" method="post" enctype="multipart/form-data">
+				<form action="#" method="post" enctype="multipart/form-data">
 					{!! csrf_field() !!}
 
 					<input type="hidden" value="0" name="sementara_dana">
@@ -44,7 +44,7 @@
 
 					<div class="field-wrap">
 						<input type="text" name="jumlah_transaksi" placeholder="Total Dana Yang Dibutuhkan"/>
-						<input type="hidden" name="id_laporan_c" value={{$detailDana['id']}} ></input>
+						
 					</div>
 					
 					<button type="submit" class="green">Post</button>
@@ -76,17 +76,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($detailDana['data'] as $rc)		
 						
-						<tr>
-							<td>{{$rc->akun}}</td>
-							<td>{{$rc->total_pengeluaran}}</td>
-							<td>{{$rc->total_pemasukan}}</td>
-							<td>{{$rc->saldo_dana_usaha}}</td>
-							<td>{{$rc->jumlah_transaksi}}</td>
-							<td>{{$rc->date}}</td>							
-						</tr>
-						@endforeach
 						</tbody>
 					</table>
 			</div>

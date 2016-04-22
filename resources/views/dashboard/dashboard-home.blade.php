@@ -9,6 +9,7 @@
 	@else
 
 		<nav>
+		<li>
 			<ul>
 				<li class="section"><a href="{{ url('/dashboard/home')}}"> Crowdfunding</a>
 				<ul class="submenu">
@@ -18,7 +19,7 @@
 				</ul>
 			</li>
 				<li><a href="{{ url('/dashboard/pendanaan')}}/{{ Auth::user()->id }}"> Pendanaan</a></li>
-				<li><a href="{{ url('/dashboard/laporan')}}/{{ Auth::user()->id }}">Laporan</a></li>
+				<li><a href="{{ url('/kelola/usaha')}}">Laporan</a></li>
 				<li><a href="{{ url('/dashboard/pengaturan')}}">Pengaturan</a></li>
 			</ul>
 			<br/><br/><center><img src="{{URL::to('/')}}../images/logo_white.png "/></center>
