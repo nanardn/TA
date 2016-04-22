@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
 	<link href="{{ URL::asset('dashboard/css/style.css')}}" rel="stylesheet">
+	<link href="{{ URL::asset('dashboard/css/jquery.modal.css')}}" rel="stylesheet">
 
 	<!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="{{URL::to('/')}}../images/favico.png">
@@ -69,7 +70,7 @@
 	
 	@yield('content')
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="{{ URL::asset('js/jquery-1.11.1.min.js')}}"></script>
 	<script src="{{ URL::asset('dashboard/js/cycle.js')}}"></script>
 	<script src="{{ URL::asset('dashboard/js/jquery.wysiwyg.js')}}"></script>
 	<script src="{{ URL::asset('dashboard/js/custom.js')}}"></script>	
@@ -81,6 +82,7 @@
 	<script src="{{ URL::asset('dashboard/js/flot-graphs.js')}}"></script>
 	<script src="{{ URL::asset('dashboard/js/cycle.js')}}"></script>
 	<script src="{{ URL::asset('dashboard/js/jquery.tablesorter.min.js')}}"></script>
+	<script src="{{ URL::asset('dashboard/js/jquery.modal.min.js')}}"></script>
 	<script type="text/javascript">
 	// Feature slider for graphs
 	$('.cycle').cycle({
