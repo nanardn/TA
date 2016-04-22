@@ -1,3 +1,4 @@
+
 @extends('layouts.dashboard')
 
 @section('content')
@@ -13,10 +14,12 @@
 				<span class="icon">&#128196;</span>
 				<hgroup>
 					<h1>Submit Laporan Pemanfaatan Dana Penggalangan</h1>
-					<h2>Data di input per hari</h2>
+					<h2>Data di Input per hari</h2>
 				</hgroup>
 			</header>
 			<div class="content">
+			<table id="myTable" border="0" >
+			<div class="content" width="100">
 				<form action="{{ URL::to('uploaddetaillaporan') }}" method="post" enctype="multipart/form-data">
 					{!! csrf_field() !!}
 
@@ -40,15 +43,14 @@
 					<br><br>
 
 					<div class="field-wrap">
-						<input type="text" name="total_dana" placeholder="Total Dana Yang Dibutuhkan"/>
+						<input type="text" name="jumlah_transaksi" placeholder="Total Dana Yang Dibutuhkan"/>
+						<input type="hidden" name="id_laporan_c" value={{$detailDana['id']}} ></input>
 					</div>
 					
-					<div class="field-wrap wysiwyg-wrap">
-						<textarea class="post" name="deskripsi" rows="5"></textarea>
-					</div>
-
 					<button type="submit" class="green">Post</button>
 				</form>
+			</div>
+			</table>
 			</div>
 		</section>
 		<br><br>
@@ -68,18 +70,20 @@
 							<th>Total Pengeluaran</th>
 							<th>Total Pemasukan </th>
 							<th>Saldo Proyek</th>
+							<th>Jumlah Uang</th>
 							<th>Tanggal Transaksi</th>
 							
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($detailDana as $rc)		
+						@foreach($detailDana['data'] as $rc)		
 						
 						<tr>
 							<td>{{$rc->akun}}</td>
 							<td>{{$rc->total_pengeluaran}}</td>
 							<td>{{$rc->total_pemasukan}}</td>
 							<td>{{$rc->saldo_dana_usaha}}</td>
+							<td>{{$rc->jumlah_transaksi}}</td>
 							<td>{{$rc->date}}</td>							
 						</tr>
 						@endforeach
