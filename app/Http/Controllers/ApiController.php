@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-=======
->>>>>>> e05196639762a6bfdbbd5cd8988fd3d9fdf8b51a
+
 use App\CrowdReport;
 
 class ApiController extends Controller
 {
-<<<<<<< HEAD
+
     //
     public function crowdReport(){
     	$campaign = request ('campaign');
@@ -42,7 +41,7 @@ class ApiController extends Controller
            $data[2]['data'][]  = [strtotime($row->tahun . '-' . $row->bulan . '-15') * 1000, $row->total_pemasukan];
     	}
     	return collect($data)->toJson();
-=======
+
     public function crowdReport()
     {
         $campaign = request('campaign');
@@ -72,6 +71,6 @@ class ApiController extends Controller
         }
 
         return collect($data)->toJson();
->>>>>>> e05196639762a6bfdbbd5cd8988fd3d9fdf8b51a
+
     }
 }
