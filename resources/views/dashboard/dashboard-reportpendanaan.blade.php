@@ -101,6 +101,24 @@
 	</section>
  	
 	<section class="content">
+		<select name="year">
+			@foreach ($years as $year)
+				<option value="{{ $year }}">{{ $year }}</option>
+			@endforeach
+		</select>
+
+		<select name="campaign">
+			@foreach ($campaigns as $k => $v)
+				<option value="{{ $k }}">{{ $v }}</option>
+			@endforeach
+		</select>
+
+		<br/>
+
+		<div id="chart"></div>
+	</section>
+
+	<section class="content">
 		<section class="widget">
 			<header>
 				<span class="icon">&#128196;</span>
@@ -156,6 +174,7 @@
 @endsection
 
 @push('scripts')
+<<<<<<< HEAD
  
  	<script>
  
@@ -198,3 +217,47 @@
  	</script>
  
  @endpush
+=======
+
+	<script>
+
+		var chart = $('#chart');
+
+		chart.css({
+			height: 300,
+			width: '100%'
+		});
+
+		var chartOptions = {
+			lines: {
+				show: true
+			},
+			points: {
+				show: true
+			},
+			xaxis: {
+				mode: 'time',
+				timeformat: '%b'
+			}
+		};
+
+		var campaignSelector = $('[name=campaign]');
+		campaignSelector.change(getReport);
+
+		var yearSelector = $('[name=year]');
+		yearSelector.change(getReport);
+		yearSelector.trigger('change');
+
+		function getReport() {
+			$.get('{{ url('api/crowd-report') }}', {
+				campaign: campaignSelector.val(),
+				year: yearSelector.val()
+			}).done(function (data) {
+				$.plot(chart, $.parseJSON(data), chartOptions);
+			});
+		}
+
+	</script>
+
+@endpush
+>>>>>>> e05196639762a6bfdbbd5cd8988fd3d9fdf8b51a

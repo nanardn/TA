@@ -9,5 +9,12 @@ use App\Http\Requests;
 class inputAllController extends Controller
 {
     //
-    return view('ziswaf.inputsemua');
+    
+    public function showpage()
+    {
+        return view('ziswaf.inputsemua');
+    }
 }
+
+
+

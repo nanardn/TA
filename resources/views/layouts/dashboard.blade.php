@@ -93,7 +93,13 @@
 	</script>
 
 @endif
+<<<<<<< HEAD
 @stack('scripts')
+=======
+
+@stack('scripts')
+
+>>>>>>> e05196639762a6bfdbbd5cd8988fd3d9fdf8b51a
 </body>
 </html>
 

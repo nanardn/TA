@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Campaign;
+use App\CrowdReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;

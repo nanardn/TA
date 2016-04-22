@@ -20,6 +20,9 @@ Route::group(array('before' => 'auth'), function()
 Route::get('/', function () {
     return view('auth.login');
 });
+
+Route::get('/api/crowd-report', 'ApiController@crowdReport');
+
 Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard/pendanaan/{id}','crowdController@index');

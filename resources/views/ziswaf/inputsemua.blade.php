@@ -20,7 +20,7 @@
 			<div class="content">
 			<table id="myTable" border="0" >
 			<div class="content" width="100">
-				<form action="#" method="post" enctype="multipart/form-data">
+				<form action="{{ URL::to('uploaddetaillaporan') }}" method="post" enctype="multipart/form-data">
 					{!! csrf_field() !!}
 
 					<input type="hidden" value="0" name="sementara_dana">
@@ -41,7 +41,18 @@
 					    <option value="Pengeluaran">Pengeluaran</option>
 					</select>
 					<br><br>
-
+					Tambahkan ke Laporan Penggalangan dana :
+					<br/> 
+					<select name="crowdfund">
+					    
+					</select>
+					<br><br>
+					Tambahkan ke Laporan Pendanaan Bank: 
+					<br/>
+					<select name="bankreport">
+					    
+					</select>
+					<br><br>
 					<div class="field-wrap">
 						<input type="text" name="jumlah_transaksi" placeholder="Total Dana Yang Dibutuhkan"/>
 						
