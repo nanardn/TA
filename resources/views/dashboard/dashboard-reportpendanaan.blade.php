@@ -174,7 +174,7 @@
 @endsection
 
 @push('scripts')
-<<<<<<< HEAD
+
  
  	<script>
  
@@ -217,7 +217,7 @@
  	</script>
  
  @endpush
-=======
+
 
 	<script>
 
@@ -260,4 +260,4 @@
 	</script>
 
 @endpush
->>>>>>> e05196639762a6bfdbbd5cd8988fd3d9fdf8b51a
+

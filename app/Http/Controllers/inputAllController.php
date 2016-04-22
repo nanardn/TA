@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\inputsemua;
+
+use  App\CrowdReport;
+
 class inputAllController extends Controller
 {
     //
