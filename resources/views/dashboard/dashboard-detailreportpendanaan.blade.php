@@ -51,6 +51,9 @@
 				</form>
 			</div>
 		</section>
+		<section class="widget">
+			<div id="chart"></div>
+		</section>
 		<br><br>
 		<section class="widget">
 			<header>
@@ -91,4 +94,38 @@
 	@endif
 	
 @endsection
+
+@push('scripts')
+
+    <script>
+
+        var chart = $('#chart');
+
+        chart.css({
+            height: 300,
+            width: '100%'
+        });
+
+        var chartOptions = {
+            lines: {
+                show: true
+            },
+            points: {
+                show: true
+            },
+            xaxis: {
+                mode: 'time',
+                timeformat: '%d %b %Y'
+            }
+        };
+
+        $.get('{{ url('api/crowd-usage-report') }}', {
+            campaign: '{{ $id }}'
+        }).done(function (data) {
+            $.plot(chart, $.parseJSON(data), chartOptions);
+        });
+
+    </script>
+
+@endpush
 

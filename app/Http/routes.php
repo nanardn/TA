@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/api/crowd-report', 'ApiController@crowdReport');
+Route::get('/api/crowd-usage-report', 'ApiController@crowdUsageReport');
 
 Route::auth();
 Route::get('/home', 'HomeController@index');

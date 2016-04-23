@@ -28,13 +28,13 @@ class crowdController extends Controller
             WHERE laporan_crowd.id_pendanaan=pendanaan.id_pendanaan');
     	return view('dashboard.dashboard-reportpendanaan')->with('reportCrowd',$result)->with('campaigns', Campaign::pluck('nama_proyek', 'id_pendanaan'))->with('years', range(CrowdReport::first()->tahun, date('Y')));
     }
-    public function detailReport()
+    public function detailReport($id)
     {
         $detailDana  = DB::table('laporan_penggunaan_crowd')
             ->join('laporan_crowd','laporan_penggunaan_crowd.id_laporan_c','=','laporan_crowd.id_laporan_c')
             ->orderBy('id_laporan_ct', 'desc')->paginate(30);
         
-        return view('dashboard.dashboard-detailreportpendanaan')->with('detailDana',$detailDana);
+        return view('dashboard.dashboard-detailreportpendanaan')->with('detailDana',$detailDana)->with('id', $id);
     }
    public function getAllPendanaanAdmin(){
         $pendanaanadmin  = DB::table('pendanaan')->orderBy('id_pendanaan', 'desc')->paginate(5);
